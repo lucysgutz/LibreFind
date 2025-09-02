@@ -3,7 +3,7 @@ async function loadCommits() {
     updatesList.innerHTML = "<li>Loading...</li>";
 
     try {
-        const res = await fetch("https://api.github.com/repos/hatemyguts/librefind/commits");
+        const res = await fetch("https://api.github.com/repos/lucysgutz/librefind/commits");
         if (!res.ok) throw new Error("GitHub API error");
         const commits = await res.json();
 
