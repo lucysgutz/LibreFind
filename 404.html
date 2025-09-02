@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibreFind - 404 Not Found</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .error-container h1 {
+            font-size: 6rem;
+            color: #007BFF;
+            margin-bottom: 1rem;
+        }
+
+        .error-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #007BFF, #0056d2);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #0056d2, #0041a8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>LibreFind</h1>
+            <h3 class="typewriter">Free the Internet!</h3>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="pages/games.html">Games</a>
+                <a href="shows.html">Shows</a>
+                <a href="music.html">Music</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+
+            <div class="marquee">
+                <p>Oops! Looks like this page wandered off! &nbsp;•&nbsp; Let’s get you back home!</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="error-container">
+                <h1>404</h1>
+                <h2>Page Not Found</h2>
+                <p>Uh oh.. seems like whatever you tried to look for doesn't exist.</p>
+                <a href="index.html" class="home-button">Go Home</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
