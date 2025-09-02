@@ -1,0 +1,181 @@
+/* light (who would use this??) */
+body.light, body.light * {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    border-color: #bbb !important;
+}
+
+body.light .sidebar, body.light .sidebar * {
+    background-color: #f5f5f5 !important;
+    color: #111111 !important;
+}
+
+body.light .sidebar a {
+    color: #111111 !important;
+}
+
+body.light button,
+body.light input,
+body.light select,
+body.light textarea,
+body.light .card {
+    background-color: #e0e0e0 !important;
+    color: #111111 !important;
+    border: 1px solid #bbb !important;
+}
+
+/* dark */
+body.dark, body.dark * {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+body.dark .sidebar, body.dark .sidebar * {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark .sidebar a {
+    color: #ffffff !important;
+}
+
+body.dark button,
+body.dark input,
+body.dark select,
+body.dark textarea,
+body.dark .card {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+
+/* cyber */
+body.cyber, body.cyber * {
+    background-color: #0a0a0a !important;
+    color: #00ffea !important;
+    border-color: #00ffd5 !important;
+}
+
+body.cyber .sidebar, body.cyber .sidebar * {
+    background-color: #111111 !important;
+    color: #00ffea !important;
+}
+
+body.cyber .sidebar a {
+    color: #00ffd5 !important;
+}
+
+body.cyber button,
+body.cyber input,
+body.cyber select,
+body.cyber textarea,
+body.cyber .card {
+    background-color: #00ffea !important;
+    color: #000000 !important;
+    border: 1px solid #00ffd5 !important;
+}
+
+/* pastel */
+body.pastel, body.pastel * {
+    background-color: #fffafc !important;
+    color: #333333 !important;
+    border-color: #ffccd5 !important;
+}
+
+body.pastel .sidebar, body.pastel .sidebar * {
+    background-color: #ffeef6 !important;
+    color: #333333 !important;
+}
+
+body.pastel .sidebar a {
+    color: #555555 !important;
+}
+
+body.pastel button,
+body.pastel input,
+body.pastel select,
+body.pastel textarea,
+body.pastel .card {
+    background-color: #ffdce0 !important;
+    color: #333333 !important;
+    border: 1px solid #ffccd5 !important;
+}
+
+/* forest */
+body.forest, body.forest * {
+    background-color: #eaf6ea !important;
+    color: #1a3d1a !important;
+    border-color: #7eb77f !important;
+}
+
+body.forest .sidebar, body.forest .sidebar * {
+    background-color: #d0edd0 !important;
+    color: #1a3d1a !important;
+}
+
+body.forest .sidebar a {
+    color: #276427 !important;
+}
+
+body.forest button,
+body.forest input,
+body.forest select,
+body.forest textarea,
+body.forest .card {
+    background-color: #7eb77f !important;
+    color: #ffffff !important;
+    border: 1px solid #276427 !important;
+}
+
+/* ocean */
+body.ocean, body.ocean * {
+    background-color: #e0f7fa !important;
+    color: #004d54 !important;
+    border-color: #26c6da !important;
+}
+
+body.ocean .sidebar, body.ocean .sidebar * {
+    background-color: #b2ebf2 !important;
+    color: #004d54 !important;
+}
+
+body.ocean .sidebar a {
+    color: #007c91 !important;
+}
+
+body.ocean button,
+body.ocean input,
+body.ocean select,
+body.ocean textarea,
+body.ocean .card {
+    background-color: #26c6da !important;
+    color: #ffffff !important;
+    border: 1px solid #007c91 !important;
+}
+body.custom {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --sidebar-bg: #f5f5f5;
+    --sidebar-text: #111111;
+    --link-color: #111111;
+    --button-bg: #e0e0e0;
+    --button-text: #111111;
+    --button-border: #bbb;
+}
+
+body.custom, body.custom * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border, #bbb) !important;
+}
+
+body.custom .sidebar, body.custom .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+
+body.custom button {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+}
