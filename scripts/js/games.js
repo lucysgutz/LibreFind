@@ -6,7 +6,7 @@ fetch('../scripts/json/games.json')
     const searchInput = document.getElementById('search');
 
     function renderGames(games) {
-      gamesList.innerHTML = ''; // clear old
+      gamesList.innerHTML = '';
       games.forEach(game => {
         const card = document.createElement('div');
         card.classList.add('game-card');
@@ -71,7 +71,6 @@ fetch('../scripts/json/games.json')
     function applyFilters() {
       let filtered = [...data];
 
- 
       const searchTerm = searchInput.value.toLowerCase();
       if (searchTerm) {
         filtered = filtered.filter(game =>
@@ -79,7 +78,6 @@ fetch('../scripts/json/games.json')
         );
       }
 
-   
       if (sortSelect.value === 'az') {
         filtered.sort((a, b) => a.title.localeCompare(b.title));
       } else if (sortSelect.value === 'za') {
@@ -89,9 +87,7 @@ fetch('../scripts/json/games.json')
       renderGames(filtered);
     }
 
-   
     applyFilters();
-
 
     sortSelect.addEventListener('change', applyFilters);
     searchInput.addEventListener('input', applyFilters);
