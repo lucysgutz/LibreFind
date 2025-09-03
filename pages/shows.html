@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LibreFind - Shows</title>
-    <link rel="stylesheet" href="../css/shows.css">
-    <link rel="stylesheet" href="../css/themes.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LibreFind - Shows</title>
+  <link rel="stylesheet" href="../css/shows.css">
+  <link rel="stylesheet" href="../css/themes.css">
+  <script src="../scripts/js/loading.js" defer></script>
+
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <h1>LibreFind</h1>
-            <h3 class="typewriter">Free the Internet!</h3>
+  <div class="container">
+    <aside class="sidebar">
+      <h1>LibreFind</h1>
+      <h3 class="typewriter">Free the Internet!</h3>
 
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="games.html">Games</a>
-                <a href="shows.html">Shows</a>
-                <a href="music.html">Music</a>
-                <a href="settings.html">Settings</a>
-            </nav>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="shows.html">Shows & Movies</a>
+        <a href="music.html">Music</a>
+        <a href="settings.html">Settings</a>
+      </nav>
 
-            <div class="marquee">
-                <p>New games added! &nbsp;•&nbsp; Now streaming free shows!</p>
-            </div>
-        </aside>
-        <h1>Coming soon..</h1>
+      <div class="marquee">
+        <p>New games added! &nbsp;•&nbsp; Now streaming free shows!</p>
+      </div>
+    </aside>
 
-        
+    <main class="content">
+      <div class="controls">
+        <input type="text" id="search-input" placeholder="search..." />
+        <span id="result-count"></span>
+      </div>
 
+      <div class="filters">
+        <button data-type="popular" class="filter-btn active">Popular</button>
+        <button data-type="movie" class="filter-btn">Movies</button>
+        <button data-type="tv" class="filter-btn">Shows</button>
+      </div>
 
-<script src="../scripts/js/themeloader.js"></script>
+      <div id="movie-list"></div>
+    </main>
+  </div>
 
+  <footer>
+    © 2025 LibreFind
+  </footer>
+
+  <script src="../scripts/js/themeloader.js"></script>
+  <script src="../scripts/js/movie.js"></script>
 </body>
 </html>
