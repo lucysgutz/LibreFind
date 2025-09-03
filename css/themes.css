@@ -153,31 +153,140 @@ body.ocean .card {
     color: #ffffff !important;
     border: 1px solid #007c91 !important;
 }
-body.custom {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --sidebar-bg: #f5f5f5;
-    --sidebar-text: #111111;
-    --link-color: #111111;
-    --button-bg: #e0e0e0;
-    --button-text: #111111;
-    --button-border: #bbb;
-}
 
-body.custom, body.custom * {
+/*  hot pink */
+body.hotpink {
+    --bg-color: #fff0f6;
+    --text-color: #330014;
+    --sidebar-bg: #ffd6e8;
+    --sidebar-text: #330014;
+    --link-color: #ff4d6d;
+    --button-bg: #ff85a1;
+    --button-text: #330014;
+    --button-border: #ff4d6d;
+}
+body.hotpink, body.hotpink * {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--button-border, #bbb) !important;
+    border-color: var(--button-border, #ff4d6d) !important;
 }
-
-body.custom .sidebar, body.custom .sidebar * {
+body.hotpink .sidebar, body.hotpink .sidebar * {
     background-color: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
 }
-
-body.custom button {
+body.hotpink .sidebar a {
+    color: var(--link-color) !important;
+}
+body.hotpink button {
     background-color: var(--button-bg) !important;
     color: var(--button-text) !important;
 }
 
-/*  */
+/* Sunset */
+body.sunset {
+    --bg-color: #fff5e6;
+    --text-color: #4d2600;
+    --sidebar-bg: #ffe0b3;
+    --sidebar-text: #4d2600;
+    --link-color: #ff9933;
+    --button-bg: #ffb84d;
+    --button-text: #4d2600;
+    --button-border: #ff9933;
+}
+body.sunset, body.sunset * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border, #ff9933) !important;
+}
+body.sunset .sidebar, body.sunset .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+body.sunset .sidebar a {
+    color: var(--link-color) !important;
+}
+body.sunset button {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+}
+/* Midnight */
+body.midnight {
+    --bg-color: #000000;
+    --text-color: #9191ff;
+    --sidebar-bg: #000000;
+    --sidebar-text: #b8b8ff;
+    --link-color: #c3d1ff;
+    --button-bg: #4d4dff;
+    --button-text: #ffffff;
+    --button-border: #3333ff;
+}
+body.midnight, body.midnight * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border, #3333ff) !important;
+}
+body.midnight .sidebar, body.midnight .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+body.midnight .sidebar a {
+    color: var(--link-color) !important;
+}
+body.midnight button {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+}
+/* Lavender */
+body.lavender {
+    --bg-color: #f9f0ff;
+    --text-color: #4b0082;
+    --sidebar-bg: #e6ccff;
+    --sidebar-text: #4b0082;
+    --link-color: #8000ff;
+    --button-bg: #b366ff;
+    --button-text: #ffffff;
+    --button-border: #8000ff;
+}
+body.lavender, body.lavender * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border, #8000ff) !important;
+}
+body.lavender .sidebar, body.lavender .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+body.lavender .sidebar a {
+    color: var(--link-color) !important;
+}
+body.lavender button {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+}
+/* Arcade */
+body.arcade {
+    --bg-color: #000000;
+    --text-color: #39ff14;
+    --sidebar-bg: #000000;
+    --sidebar-text: #39ff14;
+    --link-color: #00ffff;
+    --button-bg: #00ff00;
+    --button-text: #000000;
+    --button-border: #00ffff;
+}
+body.arcade, body.arcade * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border, #00ffff) !important;
+}
+body.arcade .sidebar, body.arcade .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+body.arcade .sidebar a {
+    color: var(--link-color) !important;
+}
+body.arcade button {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+}

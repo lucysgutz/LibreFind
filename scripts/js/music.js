@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     contentDiv.style.display = 'block';
                     playerContainer.classList.add('show');
                 } else {
-                    alert('No video found, baby :(');
+                    alert('No video found (');
                 }
             })
             .catch(err => console.error('Error fetching YouTube data:', err));
