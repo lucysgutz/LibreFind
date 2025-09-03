@@ -52,7 +52,7 @@ async function loadCommits() {
             updatesList.appendChild(li);
         });
     } catch (err) {
-        updatesList.innerHTML = `<li>could not load commits :(</li>`;
+        updatesList.innerHTML = `<li>Could not load commits :(</li>`;
         console.error(err);
     }
 }

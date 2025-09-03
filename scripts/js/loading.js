@@ -1,5 +1,5 @@
 (function () {
-  // inject css
+
   const style = document.createElement("style");
   style.textContent = `
     #loading-overlay {
@@ -36,17 +36,17 @@
   `;
   document.head.appendChild(style);
 
-  // create overlay
+
   const overlay = document.createElement("div");
   overlay.id = "loading-overlay";
   overlay.innerHTML = `<div class="loader-spinner"></div>`;
   document.body.appendChild(overlay);
 
-  // wait until everything finishes loading
+
   window.addEventListener("load", () => {
     setTimeout(() => {
       overlay.classList.add("hidden");
       setTimeout(() => overlay.remove(), 400);
-    }, 300); // delay so user sees it even on fast loads
+    }, 300); 
   });
 })();
