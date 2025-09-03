@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function fetchYouTubeVideo(songName) {
-        const apiKey = 'AIzaSyCOBQVR1Lkel8tL70gzvJY2RWxyS2SkfW0'; // replace with your own
+        const apiKey = 'AIzaSyCOBQVR1Lkel8tL70gzvJY2RWxyS2SkfW0'; 
         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(songName)}&type=video&maxResults=1&key=${apiKey}`;
 
         fetch(url)
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 allow="autoplay; encrypted-media" allowfullscreen>
                         </iframe>`;
                     songInput.value = '';
-                    // store last song so it persists
+
                     localStorage.setItem('lastSongId', videoId);
                     contentDiv.style.display = 'block';
                     playerContainer.classList.add('show');
