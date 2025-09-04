@@ -18,21 +18,15 @@ async function getMovieDetails(tmdbId, type = 'movie') {
   return await response.json();
 }
 
-async function fetchMovieLinks(tmdbId, type = 'movie') {
-  const movieDetails = await getMovieDetails(tmdbId, type);
+async function fetchMovieLinks(tmdbId) {
+  const movieDetails = await getMovieDetails(tmdbId);
   const title = movieDetails.title || movieDetails.name;
   const year = (movieDetails.release_date || movieDetails.first_air_date || '????').split('-')[0];
 
   const links = servers.map(server => {
-    let url = server;
-    if (server.includes('tmdb=')) {
-      url += tmdbId;
-    } else if (server.includes('tmdb-movie-')) {
-      url += tmdbId;
-    } else {
-      url += `${encodeURIComponent(title)} ${year}`;
-    }
-    return url;
+    if (server.includes('tmdb=')) return server + tmdbId;
+    if (server.includes('tmdb-movie-')) return server + tmdbId;
+    return server + encodeURIComponent(`${title} ${year}`);
   });
 
   return { movieDetails, links };
@@ -43,99 +37,99 @@ function clearMovies() {
   document.getElementById('result-count').textContent = '';
 }
 
-async function displayMovies(ids, type = 'movie') {
+async function displayMovies(ids, totalResults, type = 'movie') {
   const movieListElement = document.getElementById('movie-list');
   clearMovies();
 
-  for (const tmdbId of ids) {
+  ids.forEach(async tmdbId => {
     try {
-      const { movieDetails, links } = await fetchMovieLinks(tmdbId, type);
+      const { movieDetails, links } = await fetchMovieLinks(tmdbId);
 
       const movieDiv = document.createElement('div');
       movieDiv.classList.add('movie');
 
+      const poster = document.createElement('img');
+      poster.src = movieDetails.poster_path ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}` : '';
+      poster.alt = movieDetails.title || movieDetails.name;
+      movieDiv.appendChild(poster);
+
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add('movie-content');
+
       const title = document.createElement('h3');
       title.textContent = movieDetails.title || movieDetails.name;
-      movieDiv.appendChild(title);
+      contentDiv.appendChild(title);
 
       const year = document.createElement('p');
+      year.classList.add('year');
       const date = movieDetails.release_date || movieDetails.first_air_date;
       year.textContent = `Release Year: ${date ? date.split('-')[0] : 'Unknown'}`;
-      movieDiv.appendChild(year);
+      contentDiv.appendChild(year);
 
-      const overview = document.createElement('p');
+      const overview = document.createElement('div');
+      overview.classList.add('read-more-content');
       overview.textContent = movieDetails.overview || 'No description available.';
-      movieDiv.appendChild(overview);
+      contentDiv.appendChild(overview);
 
-      if (movieDetails.poster_path) {
-        const poster = document.createElement('img');
-        poster.src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
-        poster.alt = `${movieDetails.title || movieDetails.name} Poster`;
-        movieDiv.appendChild(poster);
-      }
+      const readMore = document.createElement('span');
+      readMore.classList.add('read-more-toggle');
+      readMore.textContent = 'Read more..';
+      readMore.addEventListener('click', () => {
+        overview.classList.toggle('expanded');
+        readMore.textContent = overview.classList.contains('expanded') ? 'Read less..' : 'Read more..';
+      });
+      contentDiv.appendChild(readMore);
 
       const linksDiv = document.createElement('div');
       linksDiv.classList.add('links');
-      links.forEach(link => {
-        const linkElement = document.createElement('a');
-        linkElement.href = link;
-        linkElement.textContent = 'Watch Now';
-        linkElement.target = '_blank';
-        linksDiv.appendChild(linkElement);
+      links.forEach((link, i) => {
+        const a = document.createElement('a');
+        a.href = link;
+        a.target = '_blank';
+        a.textContent = `Server ${i + 1}`;
+        linksDiv.appendChild(a);
       });
-      movieDiv.appendChild(linksDiv);
+      contentDiv.appendChild(linksDiv);
 
+      movieDiv.appendChild(contentDiv);
       movieListElement.appendChild(movieDiv);
-    } catch (error) {
-      console.error('Error fetching movie details:', error);
+    } catch (err) {
+      console.error(err);
     }
-  }
+  });
 
-  document.getElementById('result-count').textContent = `Found ${ids.length} results`;
+  document.getElementById('result-count').textContent = `Found ${totalResults} results`;
 }
 
-async function fetchAllPages(url, type) {
-  let page = 1;
-  let results = [];
-  let hasMore = true;
-
-  while (hasMore && page <= 5) {
-    const response = await fetch(`${url}&page=${page}`);
-    const data = await response.json();
-    if (!data.results || data.results.length === 0) {
-      hasMore = false;
-    } else {
-      results = results.concat(data.results.map(m => m.id));
-      page++;
-    }
-  }
-
-  return results;
+async function fetchPageResults(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  const ids = data.results.map(m => m.id);
+  return { ids, total: data.total_results };
 }
 
 async function fetchPopular(type = 'movie') {
-  return fetchAllPages(`https://api.themoviedb.org/3/${type}/popular?api_key=${API_KEY}`, type);
+  return fetchPageResults(`https://api.themoviedb.org/3/${type}/popular?api_key=${API_KEY}&page=1`);
 }
 
 async function searchMovies(query, type = 'movie') {
-  return fetchAllPages(`https://api.themoviedb.org/3/search/${type}?query=${encodeURIComponent(query)}&api_key=${API_KEY}`, type);
+  return fetchPageResults(`https://api.themoviedb.org/3/search/${type}?query=${encodeURIComponent(query)}&api_key=${API_KEY}&page=1`);
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
   let currentType = 'movie';
-
-  const ids = await fetchPopular(currentType);
-  displayMovies(ids, currentType);
+  let { ids, total } = await fetchPopular(currentType);
+  displayMovies(ids, total, currentType);
 
   const searchInput = document.getElementById('search-input');
   searchInput.addEventListener('input', async () => {
     const query = searchInput.value.trim();
     if (query) {
-      const ids = await searchMovies(query, currentType);
-      displayMovies(ids, currentType);
+      const { ids, total } = await searchMovies(query, currentType);
+      displayMovies(ids, total, currentType);
     } else {
-      const ids = await fetchPopular(currentType);
-      displayMovies(ids, currentType);
+      const { ids, total } = await fetchPopular(currentType);
+      displayMovies(ids, total, currentType);
     }
   });
 
@@ -145,15 +139,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       btn.classList.add('active');
 
       const type = btn.dataset.type;
-      if (type === 'popular') {
-        currentType = 'movie';
-        const ids = await fetchPopular('movie');
-        displayMovies(ids, 'movie');
-      } else {
-        currentType = type;
-        const ids = await fetchPopular(type);
-        displayMovies(ids, type);
-      }
+      currentType = type === 'popular' ? 'movie' : type;
+      const { ids, total } = await fetchPopular(currentType);
+      displayMovies(ids, total, currentType);
     });
   });
 });
