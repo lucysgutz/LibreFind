@@ -1,4 +1,4 @@
-/* light (who would use this??) */
+/* Light Theme */
 body.light, body.light * {
     background-color: #ffffff !important;
     color: #111111 !important;
@@ -24,7 +24,7 @@ body.light .card {
     border: 1px solid #bbb !important;
 }
 
-/* dark */
+/* Dark Theme */
 body.dark, body.dark * {
     background-color: #121212 !important;
     color: #e0e0e0 !important;
@@ -50,7 +50,7 @@ body.dark .card {
     border: 1px solid #444 !important;
 }
 
-/* cyber */
+/* Cyber Theme */
 body.cyber, body.cyber * {
     background-color: #0a0a0a !important;
     color: #00ffea !important;
@@ -76,7 +76,7 @@ body.cyber .card {
     border: 1px solid #00ffd5 !important;
 }
 
-/* pastel */
+/* Pastel Theme */
 body.pastel, body.pastel * {
     background-color: #fffafc !important;
     color: #333333 !important;
@@ -102,7 +102,7 @@ body.pastel .card {
     border: 1px solid #ffccd5 !important;
 }
 
-/* forest */
+/* Forest Theme */
 body.forest, body.forest * {
     background-color: #eaf6ea !important;
     color: #1a3d1a !important;
@@ -128,7 +128,7 @@ body.forest .card {
     border: 1px solid #276427 !important;
 }
 
-/* ocean */
+/* Ocean Theme */
 body.ocean, body.ocean * {
     background-color: #e0f7fa !important;
     color: #004d54 !important;
@@ -154,7 +154,7 @@ body.ocean .card {
     border: 1px solid #007c91 !important;
 }
 
-/*  hot pink */
+/* Hot Pink Theme */
 body.hotpink {
     --bg-color: #fff0f6;
     --text-color: #330014;
@@ -165,24 +165,33 @@ body.hotpink {
     --button-text: #330014;
     --button-border: #ff4d6d;
 }
+
 body.hotpink, body.hotpink * {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--button-border, #ff4d6d) !important;
+    border-color: var(--button-border) !important;
 }
+
 body.hotpink .sidebar, body.hotpink .sidebar * {
     background-color: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
 }
+
 body.hotpink .sidebar a {
     color: var(--link-color) !important;
 }
-body.hotpink button {
+
+body.hotpink button,
+body.hotpink input,
+body.hotpink select,
+body.hotpink textarea,
+body.hotpink .card {
     background-color: var(--button-bg) !important;
     color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
 }
 
-/* Sunset */
+/* Sunset Theme */
 body.sunset {
     --bg-color: #fff5e6;
     --text-color: #4d2600;
@@ -193,23 +202,33 @@ body.sunset {
     --button-text: #4d2600;
     --button-border: #ff9933;
 }
+
 body.sunset, body.sunset * {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--button-border, #ff9933) !important;
+    border-color: var(--button-border) !important;
 }
+
 body.sunset .sidebar, body.sunset .sidebar * {
     background-color: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
 }
+
 body.sunset .sidebar a {
     color: var(--link-color) !important;
 }
-body.sunset button {
+
+body.sunset button,
+body.sunset input,
+body.sunset select,
+body.sunset textarea,
+body.sunset .card {
     background-color: var(--button-bg) !important;
     color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
 }
-/* Midnight */
+
+/* Midnight Theme */
 body.midnight {
     --bg-color: #000000;
     --text-color: #9191ff;
@@ -220,23 +239,33 @@ body.midnight {
     --button-text: #ffffff;
     --button-border: #3333ff;
 }
+
 body.midnight, body.midnight * {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--button-border, #3333ff) !important;
+    border-color: var(--button-border) !important;
 }
+
 body.midnight .sidebar, body.midnight .sidebar * {
     background-color: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
 }
+
 body.midnight .sidebar a {
     color: var(--link-color) !important;
 }
-body.midnight button {
+
+body.midnight button,
+body.midnight input,
+body.midnight select,
+body.midnight textarea,
+body.midnight .card {
     background-color: var(--button-bg) !important;
     color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
 }
-/* Lavender */
+
+/* Lavender Theme */
 body.lavender {
     --bg-color: #f9f0ff;
     --text-color: #4b0082;
@@ -247,23 +276,33 @@ body.lavender {
     --button-text: #ffffff;
     --button-border: #8000ff;
 }
+
 body.lavender, body.lavender * {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--button-border, #8000ff) !important;
+    border-color: var(--button-border) !important;
 }
+
 body.lavender .sidebar, body.lavender .sidebar * {
     background-color: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
 }
+
 body.lavender .sidebar a {
     color: var(--link-color) !important;
 }
-body.lavender button {
+
+body.lavender button,
+body.lavender input,
+body.lavender select,
+body.lavender textarea,
+body.lavender .card {
     background-color: var(--button-bg) !important;
     color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
 }
-/* Arcade */
+
+/* Arcade Theme */
 body.arcade {
     --bg-color: #000000;
     --text-color: #39ff14;
@@ -274,19 +313,689 @@ body.arcade {
     --button-text: #000000;
     --button-border: #00ffff;
 }
+
 body.arcade, body.arcade * {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
-    border-color: var(--button-border, #00ffff) !important;
+    border-color: var(--button-border) !important;
 }
+
 body.arcade .sidebar, body.arcade .sidebar * {
     background-color: var(--sidebar-bg) !important;
     color: var(--sidebar-text) !important;
 }
+
 body.arcade .sidebar a {
     color: var(--link-color) !important;
 }
-body.arcade button {
+
+body.arcade button,
+body.arcade input,
+body.arcade select,
+body.arcade textarea,
+body.arcade .card {
     background-color: var(--button-bg) !important;
     color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
+}
+
+/* Safari Theme */
+body.safari {
+    --bg-color: #fff8e1;
+    --text-color: #5d4037;
+    --sidebar-bg: #ffe0b2;
+    --sidebar-text: #5d4037;
+    --link-color: #ff7043;
+    --button-bg: #ffab91;
+    --button-text: #5d4037;
+    --button-border: #ff7043;
+}
+
+body.safari, body.safari * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border) !important;
+}
+
+body.safari .sidebar, body.safari .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+
+body.safari .sidebar a {
+    color: var(--link-color) !important;
+}
+
+body.safari button,
+body.safari input,
+body.safari select,
+body.safari textarea,
+body.safari .card {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
+}
+
+/* Monochrome Theme */
+body.monochrome {
+    --bg-color: #f0f0f0;
+    --text-color: #1a1a1a;
+    --sidebar-bg: #d9d9d9;
+    --sidebar-text: #1a1a1a;
+    --link-color: #4d4d4d;
+    --button-bg: #bfbfbf;
+    --button-text: #1a1a1a;
+    --button-border: #4d4d4d;
+}
+
+body.monochrome, body.monochrome * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border) !important;
+}
+
+body.monochrome .sidebar, body.monochrome .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+
+body.monochrome .sidebar a {
+    color: var(--link-color) !important;
+}
+
+body.monochrome button,
+body.monochrome input,
+body.monochrome select,
+body.monochrome textarea,
+body.monochrome .card {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
+}
+
+/* Rose Gold Theme */
+body.rosegold {
+    --bg-color: #fff0f5;
+    --text-color: #800000;
+    --sidebar-bg: #ffd1dc;
+    --sidebar-text: #800000;
+    --link-color: #ff4d6d;
+    --button-bg: #ff85a1;
+    --button-text: #800000;
+    --button-border: #ff4d6d;
+}
+
+body.rosegold, body.rosegold * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--button-border) !important;
+}
+
+body.rosegold .sidebar, body.rosegold .sidebar * {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+}
+
+body.rosegold .sidebar a {
+    color: var(--link-color) !important;
+}
+
+body.rosegold button,
+body.rosegold input,
+body.rosegold select,
+body.rosegold textarea,
+body.rosegold .card {
+    background-color: var(--button-bg) !important;
+    color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
+}
+
+/* Vista Theme */
+body.vista {
+    --bg-color: #eaf4ff;
+    --text-color: #003366;
+    --sidebar-bg: rgba(204, 224, 255, 0.85);
+    --sidebar-border: #99bbdd;
+    --link-color: #004a9f;
+    --button-bg-start: #5ca9ff;
+    --button-bg-end: #2d78d4;
+    --button-hover-start: #70b6ff;
+    --button-hover-end: #3e89e8;
+    --button-text: #ffffff;
+    --window-border: #7ba8cf;
+}
+
+body.vista {
+    background: linear-gradient(to bottom, #ffffff, var(--bg-color));
+    color: var(--text-color);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    animation: vistaFadeIn 0.6s ease both;
+}
+
+body.vista nav {
+    background: rgba(240, 248, 255, 0.7);
+    border-bottom: 1px solid var(--sidebar-border);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    animation: vistaSlideDown 0.6s ease;
+}
+
+body.vista nav a {
+    color: var(--link-color);
+    margin: 0 12px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s;
+}
+
+body.vista nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -3px;
+    height: 2px;
+    background: var(--link-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+body.vista nav a:hover {
+    color: #1d5fc2;
+}
+
+body.vista nav a:hover::after {
+    transform: scaleX(1);
+}
+
+body.vista .sidebar {
+    background: var(--sidebar-bg);
+    border: 1px solid var(--sidebar-border);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    padding: 14px;
+    border-radius: 8px;
+    animation: vistaSlideIn 0.5s ease;
+}
+
+body.vista .sidebar * {
+    color: var(--text-color) !important;
+}
+
+body.vista .sidebar a {
+    color: var(--link-color) !important;
+}
+
+body.vista .updates-list {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid var(--window-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 16px;
+    margin: 16px 0;
+    animation: vistaFadeIn 0.6s ease both;
+}
+
+body.vista .updates-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #cddfee;
+}
+
+body.vista .updates-list li:last-child {
+    border-bottom: none;
+}
+
+body.vista .updates-list li:hover {
+    background: linear-gradient(to right, #f0f8ff, #e1f0ff);
+    transition: background 0.3s;
+}
+
+body.vista .movies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+body.vista .movies-list .movie {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid var(--window-border);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: vistaFadeIn 0.6s ease both;
+}
+
+body.vista .movies-list .movie img {
+    width: 100%;
+    display: block;
+}
+
+body.vista .movies-list .movie:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+body.vista button,
+body.vista input,
+body.vista select,
+body.vista textarea,
+body.vista .card {
+    background: linear-gradient(to bottom, var(--button-bg-start), var(--button-bg-end)) !important;
+    border: 1px solid #1b4f9b !important;
+    border-radius: 4px;
+    color: var(--button-text) !important;
+    padding: 7px 14px;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 1px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+body.vista button:hover {
+    background: linear-gradient(to bottom, var(--button-hover-start), var(--button-hover-end));
+    transform: translateY(-1px);
+    box-shadow: inset 0 1px rgba(255,255,255,0.6), 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.vista button:active {
+    transform: translateY(1px);
+}
+
+@keyframes vistaFadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes vistaSlideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes vistaSlideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+/* Ubuntu */
+body.ubuntu {
+    background: linear-gradient(to bottom, #f7f3f2, #fbe8e2);
+    font-family: "Ubuntu", "Segoe UI", sans-serif;
+    color: #5e2750;
+}
+
+body.ubuntu, body.ubuntu * {
+    color: #5e2750 !important;
+    border-color: #772953 !important;
+}
+
+body.ubuntu .sidebar {
+    background: linear-gradient(135deg, #e95420, #772953) !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    animation: slideInLeft 0.6s ease;
+}
+
+body.ubuntu .sidebar, body.ubuntu .sidebar * {
+    color: #ffffff !important;
+}
+
+body.ubuntu .sidebar a {
+    color: #ffffff !important;
+}
+
+body.ubuntu button,
+body.ubuntu input,
+body.ubuntu select,
+body.ubuntu textarea,
+body.ubuntu .card {
+    background: linear-gradient(to bottom, #dd4814, #b14a0b) !important;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: bold;
+    color: #ffffff !important;
+    border: 1px solid #b14a0b !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.ubuntu button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* Fedora */
+body.fedora {
+    background: radial-gradient(circle at top left, #f0f4f8, #dce3ef);
+    font-family: "Cantarell", "Segoe UI", sans-serif;
+    color: #0b3d91;
+}
+
+body.fedora, body.fedora * {
+    color: #0b3d91 !important;
+    border-color: #1a73e8 !important;
+}
+
+body.fedora .sidebar {
+    background: linear-gradient(135deg, #294172, #1a2d50) !important;
+    border-radius: 6px;
+    box-shadow: inset 0 0 6px rgba(255,255,255,0.2), 0 0 10px rgba(0,0,0,0.3);
+}
+
+body.fedora .sidebar, body.fedora .sidebar * {
+    color: #ffffff !important;
+}
+
+body.fedora .sidebar a {
+    color: #ffffff !important;
+}
+
+body.fedora button,
+body.fedora input,
+body.fedora select,
+body.fedora textarea,
+body.fedora .card {
+    background: linear-gradient(to bottom, #4d90fe, #1a73e8) !important;
+    border-radius: 4px;
+    color: #ffffff !important;
+    border: 1px solid #1a73e8 !important;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+body.fedora button:hover {
+    background: linear-gradient(to bottom, #5ea0ff, #2d83f8);
+    transform: scale(1.05);
+}
+
+/* Arch Linux */
+body.archlinux {
+    background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+    font-family: "Roboto", "Segoe UI", sans-serif;
+    color: #0d47a1;
+}
+
+body.archlinux, body.archlinux * {
+    color: #0d47a1 !important;
+    border-color: #1565c0 !important;
+}
+
+body.archlinux .sidebar {
+    background: #1976d2 !important;
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+body.archlinux .sidebar, body.archlinux .sidebar * {
+    color: #ffffff !important;
+}
+
+body.archlinux .sidebar a {
+    color: #ffffff !important;
+}
+
+body.archlinux button,
+body.archlinux input,
+body.archlinux select,
+body.archlinux textarea,
+body.archlinux .card {
+    background: linear-gradient(to bottom, #42a5f5, #1565c0) !important;
+    border-radius: 2px;
+    color: #ffffff !important;
+    border: 1px solid #1565c0 !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease;
+}
+
+body.archlinux button:hover {
+    transform: scale(1.07);
+}
+
+/* Linux Mint */
+body.mint {
+    background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+    font-family: "Noto Sans", "Segoe UI", sans-serif;
+    color: #1b5e20;
+}
+
+body.mint, body.mint * {
+    color: #1b5e20 !important;
+    border-color: #43a047 !important;
+}
+
+body.mint .sidebar {
+    background: linear-gradient(135deg, #a5d6a7, #81c784) !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+body.mint .sidebar, body.mint .sidebar * {
+    color: #1b5e20 !important;
+}
+
+body.mint .sidebar a {
+    color: #1b5e20 !important;
+}
+
+body.mint button,
+body.mint input,
+body.mint select,
+body.mint textarea,
+body.mint .card {
+    background: linear-gradient(to bottom, #66bb6a, #43a047) !important;
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: #ffffff !important;
+    border: 1px solid #43a047 !important;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.mint button:hover {
+    background: linear-gradient(to bottom, #81c784, #4caf50);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+}
+
+/* Debian */
+body.debian {
+    background: linear-gradient(to bottom, #f0f0f0, #e5d6dc);
+    font-family: "Liberation Sans", "Segoe UI", sans-serif;
+    color: #a80030;
+}
+
+body.debian, body.debian * {
+    color: #a80030 !important;
+    border-color: #d70a53 !important;
+}
+
+body.debian .sidebar {
+    background: linear-gradient(135deg, #d70a53, #8b0029) !important;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(168,0,48,0.4);
+}
+
+body.debian .sidebar, body.debian .sidebar * {
+    color: #ffffff !important;
+}
+
+body.debian .sidebar a {
+    color: #ffffff !important;
+}
+
+body.debian button,
+body.debian input,
+body.debian select,
+body.debian textarea,
+body.debian .card {
+    background: linear-gradient(to bottom, #ff3860, #d70a53) !important;
+    border-radius: 5px;
+    color: #ffffff !important;
+    border: 1px solid #d70a53 !important;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+body.debian button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(168,0,48,0.4);
+}
+
+/* ElementaryOS */
+body.elementaryos {
+    background: linear-gradient(to bottom, #fdf6e3, #eee8d5);
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    color: #657b83;
+}
+
+body.elementaryos, body.elementaryos * {
+    color: #657b83 !important;
+    border-color: #b58900 !important;
+}
+
+body.elementaryos .sidebar {
+    background: #eee8d5 !important;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+body.elementaryos .sidebar, body.elementaryos .sidebar * {
+    color: #657b83 !important;
+}
+
+body.elementaryos .sidebar a {
+    color: #657b83 !important;
+}
+
+body.elementaryos button,
+body.elementaryos input,
+body.elementaryos select,
+body.elementaryos textarea,
+body.elementaryos .card {
+    background: #b58900 !important;
+    border-radius: 12px;
+    color: #ffffff !important;
+    border: 1px solid #b58900 !important;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s;
+}
+
+body.elementaryos button:hover {
+    background: #d19a00;
+    transform: scale(1.03);
+}
+
+/* Kali  */
+body.kali {
+  background: #0f0f0f;
+  font-family: "Fira Code", monospace;
+  color: #e0f7ff;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+
+body.kali .sidebar {
+  background: #111 !important;
+  border-right: 1px solid #00bcd4 !important;
+  box-shadow: 2px 0 12px rgba(0,188,212,0.3);
+}
+body.kali .sidebar h1,
+body.kali .sidebar h3,
+body.kali .sidebar nav a {
+  color: #e0f7ff !important;
+}
+body.kali .sidebar nav a:hover {
+  color: #00bcd4 !important;
+  transform: translateX(4px);
+}
+
+
+body.kali .marquee {
+  border-top: 1px solid #00bcd4;
+  border-bottom: 1px solid #00bcd4;
+}
+body.kali .marquee p {
+  color: #00eaff;
+}
+
+
+body.kali .content {
+  background: #0f0f0f !important;
+  color: #e0f7ff;
+}
+
+
+body.kali .controls {
+  background: #111;
+  box-shadow: 0 2px 10px rgba(0,188,212,0.3);
+}
+body.kali #search-input {
+  background: #0f0f0f;
+  border: 2px solid #00bcd4;
+  color: #e0f7ff;
+}
+body.kali #search-input:focus {
+  border-color: #00eaff;
+  box-shadow: 0 0 8px rgba(0,234,255,0.4);
+}
+body.kali #result-count {
+  color: #aaa;
+}
+
+
+body.kali .filter-btn {
+  background: #1a1a1a;
+  color: #e0f7ff;
+  border: 1px solid #00bcd4;
+}
+body.kali .filter-btn:hover {
+  background: #00bcd4;
+  color: #0f0f0f;
+}
+body.kali .filter-btn.active {
+  background: #00eaff;
+  color: #0f0f0f;
+  box-shadow: 0 0 12px rgba(0,234,255,0.6);
+}
+
+
+body.kali .movie {
+  background: #1a1a1a;
+  color: #e0f7ff;
+  border: 1px solid #00bcd4;
+  box-shadow: 0 4px 16px rgba(0,188,212,0.2);
+}
+body.kali .movie:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,234,255,0.4);
+}
+body.kali .movie h3 {
+  color: #00eaff;
+  text-shadow: 0 0 6px rgba(0,234,255,0.6);
+}
+body.kali .movie p.year {
+  color: #aaa;
+}
+body.kali .movie p {
+  color: #ccefff;
+}
+
+
+body.kali .links a {
+  background: #00bcd4;
+  color: #0f0f0f;
+  font-weight: bold;
+}
+body.kali .links a:hover {
+  background: #00eaff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 10px rgba(0,234,255,0.5);
+}
+
+
+body.kali footer {
+  color: #888;
 }
