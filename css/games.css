@@ -290,7 +290,7 @@ footer {
 .controls input[type="text"]::placeholder {
     color: #666;
 }
-/* base button style for all themes */
+
 button {
     padding: 8px 16px;
     font-size: 14px;
@@ -306,52 +306,9 @@ button {
     display: inline-block;
 }
 
-/* hover effect without changing theme colors */
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     filter: brightness(0.95);
 }
 
-/* theme-controlled colors */
-body.light button {
-    background-color: #e0e0e0;
-    color: #111;
-    border-color: #bbb;
-}
-
-body.dark button {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border-color: #444;
-}
-
-body.cyber button {
-    background-color: #00ffea;
-    color: #000;
-    border-color: #00ffd5;
-}
-
-body.pastel button {
-    background-color: #ffdce0;
-    color: #333;
-    border-color: #ffccd5;
-}
-
-body.forest button {
-    background-color: #7eb77f;
-    color: #fff;
-    border-color: #276427;
-}
-
-body.ocean button {
-    background-color: #26c6da;
-    color: #fff;
-    border-color: #007c91;
-}
-
-body.custom button {
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    border-color: var(--button-border, #bbb);
-}

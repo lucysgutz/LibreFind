@@ -3,12 +3,14 @@
         "title": "Angry Birds",
         "description": "Catapult sinister-looking birds to destroy the fortresses protecting green pigs!",
         "link": "../assets/games/AngryBirds.html",
-        "icon": "../assets/media/ab.png"
+        "icon": "../assets/media/ab.png",
+        "fullscreenSafe": false
     },
     {
         "title": "Bad Parenting",
         "description": "Play as a child trapped in a house with a mysterious nighttime visitor who rewards good children with gifts. Explore the themes of discipline, trauma, and fear in this disturbing and unsettling game with multiple endings.",
         "link": "../assets/games/Bad Parenting 1.html",
-        "icon": "../assets/media/badp1.png"
+        "icon": "../assets/media/badp1.png",
+        "fullscreenSafe": true
     }
 ]

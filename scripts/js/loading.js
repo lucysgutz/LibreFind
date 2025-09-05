@@ -1,5 +1,4 @@
 (function () {
-
   const style = document.createElement("style");
   style.textContent = `
     #loading-overlay {
@@ -8,12 +7,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      font-size: 20px;
       z-index: 9999;
       transition: opacity 0.4s ease;
     }
@@ -22,10 +20,10 @@
       pointer-events: none;
     }
     .loader-spinner {
-      width: 50px;
-      height: 50px;
-      border: 5px solid #ddd;
-      border-top: 5px solid #3498db;
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #00aaff;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -36,17 +34,15 @@
   `;
   document.head.appendChild(style);
 
-
   const overlay = document.createElement("div");
   overlay.id = "loading-overlay";
   overlay.innerHTML = `<div class="loader-spinner"></div>`;
   document.body.appendChild(overlay);
 
-
   window.addEventListener("load", () => {
     setTimeout(() => {
       overlay.classList.add("hidden");
       setTimeout(() => overlay.remove(), 400);
-    }, 300); 
+    }, 300);
   });
 })();

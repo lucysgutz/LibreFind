@@ -92,7 +92,6 @@ body {
     border-radius: 8px 0 0 8px;
 }
 
-/* HEADINGS & TEXT */
 .content h2 {
     font-size: 1.5rem;
     margin: 1rem 0 0.5rem;
@@ -129,20 +128,6 @@ button:hover {
     filter: brightness(0.9);
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
-
-
-body.light button { background-color: #e0e0e0; color: #111; border: 1px solid #bbb; }
-body.dark button { background-color: #2a2a2a; color: #e0e0e0; border: 1px solid #444; }
-body.cyber button { background-color: #00ffea; color: #000; border: 1px solid #00ffd5; box-shadow: 0 0 5px #00ffd5; }
-body.pastel button { background-color: #ffdce0; color: #333; border: 1px solid #ffccd5; }
-body.forest button { background-color: #7eb77f; color: #fff; border: 1px solid #276427; }
-body.ocean button { background-color: #26c6da; color: #fff; border: 1px solid #007c91; }
-body.custom button { background-color: var(--button-bg) !important; color: var(--button-text) !important; border: 1px solid var(--button-border, #bbb) !important; }
-
-body.custom button:hover, body.light button:hover, body.dark button:hover, body.cyber button:hover, body.pastel button:hover, body.forest button:hover, body.ocean button:hover {
-    filter: brightness(0.9);
-}
-
 
 @keyframes typing { from { width: 0; } to { width: 100%; } }
 @keyframes blink { 50% { border-color: transparent; } }

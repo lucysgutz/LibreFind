@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LibreFind - Settings</title>
-   <link rel="stylesheet" href="../css/settings.css">
-<link rel="stylesheet" href="../css/themes.css">
-<script src="../scripts/js/loading.js" defer></script>
-<meta name="title" content="LibreFind">
-<meta name="description" content="The world's best open-sourced media hub ranging from music, shows, movies to even some of your favorite games! No trackers, Free the internet.">
-<meta name="keywords" content="games, movies, shows, music, open source">
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="language" content="English">
- <link rel="icon" type="image/x-icon" href="../assets/media/favico.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LibreFind - Settings</title>
+  <link rel="stylesheet" href="../css/settings.css">
+  <link rel="stylesheet" href="../css/themes.css">
+  <script src="../scripts/js/loading.js" defer></script>
 
+ 
+  <meta name="title" content="LibreFind">
+  <meta name="description" content="The world's best open-sourced media hub ranging from music, shows, movies to even some of your favorite games! No trackers, Free the internet.">
+  <meta name="keywords" content="games, movies, shows, music, open source">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+
+  <link rel="icon" type="image/x-icon" href="../assets/media/favico.ico">
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <h1>LibreFind</h1>
-            <h3 class="typewriter">Free the Internet!</h3>
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="games.html">Games</a>
-                <a href="shows.html">Shows & Movies</a>
-                <a href="settings.html">Settings</a>
-                  <a href="https://discord.gg/3EzQRW7g6Q">Our Discord</a>
-            </nav>
+  <div class="container">
+    <aside class="sidebar">
+      <h1>LibreFind</h1>
+      <h3 class="typewriter">Free the Internet!</h3>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="shows.html">Shows & Movies</a>
+        <a href="settings.html" class="active">Settings</a>
+        <a href="https://discord.gg/3EzQRW7g6Q">Our Discord</a>
+      </nav>
 
-            <div id="visitor-counter" style="margin-top: 15px;">
-             <script type="text/javascript" src="https://www.stat-counter.org/count/ijbb"></script><br>
- <a href='https://www.pferdeversicherung.at/pferdelebensversicherung/'>Pferde Lebensversicherung</a> <script type='text/javascript' src='https://www.whomania.com/ctr?id=99bfbaa9eaa6ea6899e1a5599bcc8f92cae63249'></script>
-            </div>
-            <div class="marquee">
-                <p>New games added! &nbsp;•&nbsp; Now streaming free shows!</p>
-            </div>
-        </aside>
-        <main class="content">
-       <section>
-    <h2>Settings</h2>
-    <p>Choose Site Theme:</p>
-    <div class="themes">
-        <button onclick="setTheme('light')">Light</button>
-        <button onclick="setTheme('dark')">Dark</button>
-        <button onclick="setTheme('cyber')">Cyber</button>
-        <button onclick="setTheme('pastel')">Pastel</button>
-        <button onclick="setTheme('forest')">Forest</button>
+      <div id="visitor-counter" style="margin-top: 15px;">
+        <script type="text/javascript" src="https://www.stat-counter.org/count/ijbb"></script><br>
+        <a href='https://www.pferdeversicherung.at/pferdelebensversicherung/'>Pferde Lebensversicherung</a>
+        <script type='text/javascript' src='https://www.whomania.com/ctr?id=99bfbaa9eaa6ea6899e1a5599bcc8f92cae63249'></script>
+      </div>
+
+      <div class="marquee">
+        <p>New games added! &nbsp;•&nbsp; Now streaming free shows!</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section>
+        <h2>Settings</h2>
+        <p>Classic Themes:</p>
+        <div class="themes">
+          <button onclick="setTheme('light')">Light</button>
+          <button onclick="setTheme('dark')">Dark</button>
+          <button onclick="setTheme('cyber')">Cyber</button>
+          <button onclick="setTheme('pastel')">Pastel</button>
+          <button onclick="setTheme('forest')">Forest</button>
+          <button onclick="setTheme('hotpink')">Hot Pink</button>
+          <button onclick="setTheme('lavender')">Lavender</button>
+          <button onclick="setTheme('arcade')">Arcade</button>
+          <button onclick="setTheme('safari')">Safari</button>
+          <button onclick="setTheme('monochrome')">Monochrome</button>
+          <button onclick="setTheme('rosegold')">Rose Gold</button>
+        </div>
+      </section>
+      <section>
+        <h1>Animated Themes:</h1>
+        <button onclick="setTheme('vista')">Vista</button>
         <button onclick="setTheme('ocean')">Ocean</button>
-        <button onclick="setTheme('hotpink')">Hot Pink</button>
         <button onclick="setTheme('sunset')">Sunset</button>
         <button onclick="setTheme('midnight')">Midnight</button>
-        <button onclick="setTheme('lavender')">Lavender</button>
-        <button onclick="setTheme('arcade')">Arcade</button>
-        <button onclick="setTheme('safari')">Safari</button>
-        <button onclick="setTheme('monochrome')">Monochrome</button>
-        <button onclick="setTheme('rosegold')">Rose Gold</button>
-        <button onclick="setTheme('vista')">Vista</button>
+      </section>
+    </main>
+  </div>
 
-        </div>
-    <h1>Linux Distro Themes</h1>
-        <p>Wanna rep your favorite linux distro? Choose one!:</p>
-    <div class="themes">
-        <button onclick="setTheme('ubuntu')">Ubuntu</button>
-        <button onclick="setTheme('fedora')">Fedora</button>
-        <button onclick="setTheme('archlinux')">Arch Linux</button>
-        <button onclick="setTheme('mint')">Mint</button>
-        <button onclick="setTheme('debian')">Debian</button>
-        <button onclick="setTheme('elementaryos')">Elementary OS</button>
-        <button onclick="setTheme('kali')">Kali Linux</button>
-</section>
-
-
-
-
-<script src="../scripts/js/themeloader.js"></script>
-<script src="../scripts/js/music.js" defer></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3492798037907767"
-     crossorigin="anonymous"></script>
-        </main>
-    </div>
+  <script src="../scripts/js/themeloader.js"></script>
+  <script src="../scripts/js/music.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3492798037907767" crossorigin="anonymous"></script>
 </body>
 </html>
