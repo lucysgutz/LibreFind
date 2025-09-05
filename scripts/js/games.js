@@ -22,7 +22,7 @@ fetch('../scripts/json/games.json')
             <button class="mute-button">Mute</button>
           </div>
           <div class="iframe-container" style="display:none;">
-            <iframe src="${game.link}" class="game-iframe" allow="fullscreen; autoplay" tabindex="0" style="width:100%; height:500px;"></iframe>
+            <iframe class="game-iframe" allow="fullscreen; autoplay" tabindex="0" style="width:100%; height:500px;"></iframe>
             <div class="iframe-buttons">
               <button class="fullscreen-button" ${game.fullscreenSafe === false ? 'disabled title="Fullscreen disabled for this game"' : ''}>Fullscreen</button>
               <button class="exit-button">Exit</button>
@@ -38,37 +38,38 @@ fetch('../scripts/json/games.json')
         const muteBtn = card.querySelector('.mute-button');
         const iframe = card.querySelector('iframe');
 
-        
         function closeAllIframes() {
           const openIframes = document.querySelectorAll('.iframe-container');
           openIframes.forEach(container => {
-            if (container !== iframeContainer) container.style.display = 'none';
+            const f = container.querySelector('iframe');
+            if (container !== iframeContainer) {
+              f.src = f.src;
+              container.style.display = 'none';
+            }
           });
         }
 
-       
         playBtn.addEventListener('click', () => {
           closeAllIframes();
           iframeContainer.style.display = 'block';
+          iframe.src = game.link;
           iframe.focus();
         });
 
-        
         exitBtn.addEventListener('click', () => {
           if (confirm("You may lose progress! Are you sure you want to exit?")) {
+            iframe.src = 'about:blank';
             iframeContainer.style.display = 'none';
             document.exitFullscreen?.();
           }
         });
 
-        
         fullscreenBtn.addEventListener('click', () => {
           if (iframe.requestFullscreen) iframe.requestFullscreen();
           else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
           else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
         });
 
-        
         downloadBtn.addEventListener('click', () => {
           fetch(game.link)
             .then(resp => resp.text())
@@ -82,26 +83,23 @@ fetch('../scripts/json/games.json')
             .catch(err => alert('Failed to download game :c ' + err));
         });
 
-        
-    muteBtn.addEventListener('click', () => {
-  try {
-    const isMuted = muteBtn.textContent === 'Unmute';
-    iframe.contentWindow.postMessage({ type: isMuted ? 'unmute' : 'mute' }, '*');
-    muteBtn.textContent = isMuted ? 'Mute' : 'Unmute';
-  } catch {
-    alert('Cannot toggle mute due to cross-origin restrictions.');
-  }
-});
+        muteBtn.addEventListener('click', () => {
+          try {
+            const isMuted = muteBtn.textContent === 'Unmute';
+            iframe.contentWindow.postMessage({ type: isMuted ? 'unmute' : 'mute' }, '*');
+            muteBtn.textContent = isMuted ? 'Mute' : 'Unmute';
+          } catch {
+            iframe.src = 'about:blank';
+            muteBtn.textContent = 'Mute';
+            alert('Cannot toggle mute due to cross-origin restrictions. Stopping game instead.');
+          }
+        });
 
-
-        
         iframe.addEventListener('load', () => {
           try {
             const links = iframe.contentDocument.querySelectorAll('a');
             links.forEach(link => link.setAttribute('target', '_blank'));
-          } catch {
-         
-          }
+          } catch {}
         });
 
         gamesList.appendChild(card);
