@@ -12,5 +12,31 @@
         "link": "../assets/games/Bad Parenting 1.html",
         "icon": "../assets/media/badp1.png",
         "fullscreenSafe": true
+    },
+    {
+        "title": "Cuphead",
+        "description": "Play as Cuphead or Mugman as you traverse strange worlds, acquire new weapons, learn powerful super moves, and discover hidden secrets while you try to pay your debt back to the devil!",
+        "link": "../assets/games/Cuphead.html",
+        "icon": "../assets/media/cuphead.jpg",
+        "fullscreenSafe": true
+    },
+     
+    {"title": "Crazy Cattle 3D",
+        "description": "Crazy Cattle 3D is an independent battle royale game where you play as an explosive sheep whose goal is to be the last sheep standing.",
+        "link": "../assets/games/Crazy Cattle 3D.html",
+        "icon": "../assets/media/crazycattle.png",
+        "fullscreenSafe": true
+    },
+    { "title": "Crazy Kitty 3D",
+        "description": "Crazy Kitty 3D is an independent battle royale game where you play as an explosive cat whose goal is to be the last cat standing.",
+        "link": "../assets/games/Crazy Kitty 3D.html",
+        "icon": "../assets/media/crazykitty.png",
+        "fullscreenSafe": true },
+    
+    { "title": "Crazy Chicken 3D",
+        "description": "Crazy Chicken 3D is an independent battle royale game where you play as an explosive chicken whose goal is to be the last chicken standing.",
+        "link": "../assets/games/Crazy Chicken 3D.html",
+        "icon": "../assets/media/crazychicken.png",
+        "fullscreenSafe": true
     }
 ]
