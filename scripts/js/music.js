@@ -59,23 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         transition: background 0.2s ease;
     }
     #site-music-player .controls button:hover { background-color: #007BFF; }
-    #site-music-player #progress-bar,
-    #site-music-player #volume-bar {
-        width: 90%;
-        margin-bottom: 5px;
-        -webkit-appearance: none;
-        height: 6px;
-        background: #555;
-        border-radius: 5px;
-    }
-    #site-music-player #progress-bar::-webkit-slider-thumb,
-    #site-music-player #volume-bar::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 12px; height: 12px;
-        background: #007BFF;
-        border-radius: 50%;
-        cursor: pointer;
-    }
     #site-music-player .song-info {
         text-align: center;
         font-size: 0.9rem;
@@ -100,8 +83,27 @@ document.addEventListener('DOMContentLoaded', function() {
         margin-bottom: 5px;
     }
     #site-music-player #add-btn:hover { background-color: #1e7e34; }
+    #site-music-player #playlist {
+        width: 90%;
+        max-height: 120px;
+        overflow-y: auto;
+        font-size: 0.85rem;
+        text-align: left;
+        margin-top: 5px;
+        padding: 5px;
+        background-color: #111;
+        border-radius: 8px;
+    }
+    #site-music-player #playlist div {
+        padding: 3px 5px;
+        cursor: pointer;
+    }
+    #site-music-player #playlist div:hover {
+        background-color: #333;
+    }
     `;
     document.head.appendChild(style);
+
 
     const playerContainer = document.createElement('div');
     playerContainer.id = 'site-music-player';
@@ -119,91 +121,115 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button id="play-pause-btn">▶</button>
                 <button id="next-btn">⏭</button>
             </div>
-            <input type="range" id="progress-bar" min="0" max="100" value="0">
-            <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.7">
-            <input type="text" id="song-input" placeholder="Add song URL">
+            <input type="text" id="song-input" placeholder="Search song name">
             <button id="add-btn">Add Song</button>
+            <div id="playlist"></div>
         </div>
+        <div id="yt-player"></div>
     `;
     document.body.appendChild(playerContainer);
 
-    const toggleBtn = playerContainer.querySelector('.toggle-btn');
-    const closeBtn = playerContainer.querySelector('.close-btn');
-    const contentDiv = playerContainer.querySelector('.content');
+
     const songTitle = document.getElementById('song-title');
     const playPauseBtn = document.getElementById('play-pause-btn');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    const progressBar = document.getElementById('progress-bar');
-    const volumeBar = document.getElementById('volume-bar');
     const songInput = document.getElementById('song-input');
     const addBtn = document.getElementById('add-btn');
+    const playlistDiv = document.getElementById('playlist');
+    const toggleBtn = playerContainer.querySelector('.toggle-btn');
+    const closeBtn = playerContainer.querySelector('.close-btn');
+    const contentDiv = playerContainer.querySelector('.content');
 
 
-    const audio = new Audio();
-    audio.volume = 0.7;
-
-
+    let ytPlayer;
     let playlist = [];
     let currentIndex = 0;
     let isPlaying = false;
 
+   
+    window.onYouTubeIframeAPIReady = function() {
+        ytPlayer = new YT.Player('yt-player', {
+            height: '0',
+            width: '0',
+            events: {
+                'onReady': () => console.log('YouTube API ready'),
+                'onStateChange': (event) => {
+                    if (event.data === YT.PlayerState.ENDED) nextSong();
+                }
+            }
+        });
+    };
+
     function loadSong(index) {
-        if (!playlist[index]) {
-            audio.pause();
-            songTitle.textContent = 'No song selected';
-            playPauseBtn.textContent = "▶";
-            isPlaying = false;
-            return;
-        }
+        if (!playlist[index]) return;
+        currentIndex = index;
         const song = playlist[index];
-        audio.src = song.url;
-        songTitle.textContent = song.title || `Song ${index+1}`;
-        audio.play();
+        songTitle.textContent = song.title;
+        ytPlayer.loadVideoById(song.id);
         playPauseBtn.textContent = "⏸";
         isPlaying = true;
     }
 
-   
-    playPauseBtn.addEventListener('click', () => {
-        if (!audio.src) return;
-        if (isPlaying) { audio.pause(); playPauseBtn.textContent="▶"; }
-        else { audio.play(); playPauseBtn.textContent="⏸"; }
-        isPlaying = !isPlaying;
-    });
+    function playPause() {
+        if (!playlist.length) return;
+        if (isPlaying) {
+            ytPlayer.pauseVideo();
+            playPauseBtn.textContent = "▶";
+            isPlaying = false;
+        } else {
+            ytPlayer.playVideo();
+            playPauseBtn.textContent = "⏸";
+            isPlaying = true;
+        }
+    }
 
-    prevBtn.addEventListener('click', () => {
+    function prevSong() {
         currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
         loadSong(currentIndex);
-    });
+    }
 
-    nextBtn.addEventListener('click', () => {
+    function nextSong() {
         currentIndex = (currentIndex + 1) % playlist.length;
         loadSong(currentIndex);
-    });
+    }
 
-    audio.addEventListener('ended', () => nextBtn.click());
+    function renderPlaylist() {
+        playlistDiv.innerHTML = '';
+        playlist.forEach((s, i) => {
+            const item = document.createElement('div');
+            item.textContent = s.title;
+            item.addEventListener('click', () => loadSong(i));
+            playlistDiv.appendChild(item);
+        });
+    }
 
-    audio.addEventListener('timeupdate', () => {
-        progressBar.value = (audio.currentTime / audio.duration) * 100 || 0;
-    });
+    async function searchAndAddSong(query) {
+        const apiKey = "AIzaSyCOBQVR1Lkel8tL70gzvJY2RWxyS2SkfW0"; 
+        const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=1&q=${encodeURIComponent(query)}&key=${apiKey}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data.items && data.items.length > 0) {
+            const vid = data.items[0];
+            playlist.push({id: vid.id.videoId, title: vid.snippet.title});
+            renderPlaylist();
+            if (playlist.length === 1) loadSong(0);
+        } else {
+            alert('No results found.');
+        }
+    }
 
-    progressBar.addEventListener('input', () => {
-        audio.currentTime = (progressBar.value / 100) * audio.duration;
-    });
-
-    volumeBar.addEventListener('input', () => audio.volume = volumeBar.value);
-
+    playPauseBtn.addEventListener('click', playPause);
+    prevBtn.addEventListener('click', prevSong);
+    nextBtn.addEventListener('click', nextSong);
 
     addBtn.addEventListener('click', () => {
-        const url = songInput.value.trim();
-        if (!url) return;
-        playlist.push({title: url.split('/').pop(), url});
+        const query = songInput.value.trim();
+        if (!query) return;
+        searchAndAddSong(query);
         songInput.value = '';
-        if (playlist.length === 1) loadSong(0); 
     });
 
- 
     toggleBtn.addEventListener('click', () => {
         contentDiv.style.display = contentDiv.style.display === 'block' ? 'none' : 'block';
     });
@@ -213,6 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
         playerContainer.classList.remove('show');
     });
 
-    setTimeout(() => playerContainer.classList.add('show'), 200);
 
+    setTimeout(() => playerContainer.classList.add('show'), 200);
 });
