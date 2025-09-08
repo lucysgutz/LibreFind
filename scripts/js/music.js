@@ -1,5 +1,5 @@
  
-const API_KEY = '';
+const API_KEY = 'AIzaSyCOBQVR1Lkel8tL70gzvJY2RWxyS2SkfW0';
 
 
 async function searchMusicVideos(query) {
