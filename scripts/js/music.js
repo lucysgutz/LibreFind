@@ -198,7 +198,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderPlaylist();
                 if(playlist.length===1) loadSong(0);
             } else alert('No results found.');
-        } catch(e) {}
+        } catch(e) {
+            console.error('Error searching for song:', e);
+        }
     }
 
     playPauseBtn.addEventListener('click', playPause);
