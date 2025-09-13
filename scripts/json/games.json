@@ -4,7 +4,7 @@
         "description": "Catapult sinister-looking birds to destroy the fortresses protecting green pigs!",
         "link": "../assets/games/AngryBirds.html",
         "icon": "../assets/media/ab.png",
-        "fullscreenSafe": false
+        "fullscreenSafe": true
     },
     {
         "title": "Bad Parenting",
