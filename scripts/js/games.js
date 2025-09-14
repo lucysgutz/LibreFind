@@ -20,6 +20,7 @@ fetch('../scripts/json/games.json')
             <button class="play-button">Play</button>
             <button class="download-button">Download HTML</button>
             <button class="mute-button">Mute</button>
+            <button class="open-new-tab-button">Open in New Tab</button>
           </div>
           <div class="iframe-container" style="display:none;">
             <iframe class="game-iframe" allow="fullscreen; autoplay" tabindex="0" style="width:100%; height:500px;"></iframe>
@@ -36,6 +37,7 @@ fetch('../scripts/json/games.json')
         const fullscreenBtn = card.querySelector('.fullscreen-button');
         const downloadBtn = card.querySelector('.download-button');
         const muteBtn = card.querySelector('.mute-button');
+        const openNewTabBtn = card.querySelector('.open-new-tab-button');
         const iframe = card.querySelector('iframe');
 
         function closeAllIframes() {
@@ -93,6 +95,10 @@ fetch('../scripts/json/games.json')
             muteBtn.textContent = 'Mute';
             alert('Cannot toggle mute due to cross-origin restrictions. Stopping game instead.');
           }
+        });
+
+        openNewTabBtn.addEventListener('click', () => {
+          window.open(game.link, '_blank');
         });
 
         iframe.addEventListener('load', () => {
