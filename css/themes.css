@@ -1169,3 +1169,9 @@ body.midnight ::-webkit-scrollbar-thumb {
 body.midnight ::-webkit-scrollbar-thumb:hover {
   background: #3d3dcc;
 }
+body.midnight .sidebar h3.typewriter {
+  color: var(--ink);
+  text-shadow: 0 0 10px rgba(145,145,255,0.5);
+  white-space: normal; /* Allow text to break onto multiple lines */
+
+}
