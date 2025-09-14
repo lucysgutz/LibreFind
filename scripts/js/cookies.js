@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const style = document.createElement('style');
     style.textContent = `
-
         body.cookie-modal-open > *:not(#cookie-modal) {
             filter: blur(5px);
             pointer-events: none;
@@ -77,14 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
- 
     const modal = document.createElement('div');
     modal.id = 'cookie-modal';
     modal.innerHTML = `
-        <h2>Cookies</h2>
-        <p>We use cookies to improve your experience</p>
+        <h2>Cookie Consent</h2>
+        <p>We use cookies to improve your experience. Would you like to accept or deny cookies?</p>
         <button id="cookie-accept">Accept</button>
-        <button id="cookie-reject">Reject</button>
+        <button id="cookie-reject">Deny</button>
+        <p><a href="/privacy-policy" target="_blank">Read our privacy policy</a></p>
     `;
     document.body.appendChild(modal);
 
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const consent = localStorage.getItem('cookieConsent');
 
     if (!consent) {
-
         modal.classList.add('show');
         document.body.classList.add('cookie-modal-open');
     } else {
@@ -121,10 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyConsent(value) {
         if (value === 'accepted') {
             console.log('Cookies accepted: trackers/ads can load.');
-
+      
         } else {
             console.log('Cookies rejected: no trackers loaded.');
-
+   
         }
     }
 });
