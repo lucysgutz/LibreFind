@@ -88,7 +88,7 @@ fetch('../scripts/json/games.json')
             const isMuted = muteBtn.textContent === 'Unmute';
             iframe.contentWindow.postMessage({ type: isMuted ? 'unmute' : 'mute' }, '*');
             muteBtn.textContent = isMuted ? 'Mute' : 'Unmute';
-          } catch {
+          } catch (error) {
             iframe.src = 'about:blank';
             muteBtn.textContent = 'Mute';
             alert('Cannot toggle mute due to cross-origin restrictions. Stopping game instead.');
