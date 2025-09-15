@@ -38,5 +38,17 @@
         "link": "../assets/games/Crazy Chicken 3D.html",
         "icon": "../assets/media/crazychicken.png",
         "fullscreenSafe": true
+    },
+    { "title": "Kindergarten",
+        "description": "Kindergarten is an abstract puzzle adventure game. You play as a student in a school that’s a bit…off. The teacher is trying to get rid of her kids. the janitor is frequently seen cleaning up blood. The cafeteria is serving the same slop over and over again. Kids are walking around with strange devices planted on them after visiting the principal, and one of your fellow classmates has gone missing. It’s up to you to figure out what’s going on, because your life might depend on it.",
+        "link": "../assets/games/Kindergarten.html",
+        "icon": "../assets/media/kindergarten.png",
+        "fullscreenSafe": true
+    },
+    { "title": "Kindergarten 2",
+        "description": "Kindergarten 2 is the long awaited sequel to 2017's Kindergarten! After the events that occurred on Monday, the children have been rezoned to an all new school. Discover all new areas and new characters as you assist the children with their various assignments. Whether it's helping Cindy find a new boyfriend, or helping the janitor with his war on Bob, there's always someone who can be...assisted. Play through the same wonderful Tuesday over and over again, in what has been described as Groundhog Day with messed up children.",
+        "link": "../assets/games/Kindergarten 2.html",
+        "icon": "../assets/media/kindergarten2.png",
+        "fullscreenSafe": true
     }
 ]

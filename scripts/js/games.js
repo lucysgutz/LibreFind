@@ -4,6 +4,7 @@ fetch('../scripts/json/games.json')
     const gamesList = document.getElementById('games-list');
     const sortSelect = document.getElementById('sort');
     const searchInput = document.getElementById('search');
+    const downloadAllButton = document.getElementById('download-all'); // New button for downloading all games
 
     function renderGames(games) {
       gamesList.innerHTML = '';
@@ -18,7 +19,7 @@ fetch('../scripts/json/games.json')
           <p>${game.description}</p>
           <div class="game-controls">
             <button class="play-button">Play</button>
-            <button class="download-button">Download HTML</button>
+            <button class="download-button">Download</button>
             <button class="mute-button">Mute</button>
             <button class="open-new-tab-button">Open in New Tab</button>
           </div>
@@ -122,6 +123,21 @@ fetch('../scripts/json/games.json')
 
       renderGames(filtered);
     }
+
+    downloadAllButton.addEventListener('click', () => {
+      data.forEach(game => {
+        fetch(game.link)
+          .then(resp => resp.text())
+          .then(html => {
+            const blob = new Blob([html], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `${game.title}.html`;
+            a.click();
+          })
+          .catch(err => alert('Failed to download game ' + game.title + ': ' + err));
+      });
+    });
 
     applyFilters();
     sortSelect.addEventListener('change', applyFilters);
